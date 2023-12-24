@@ -6,22 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Merry Christmas</title>
     <link rel="stylesheet" href="index.css">
-    <!-- <script>
-        // let name = toString(prompt("Enter your name."));
-        var entername = "ram";
-        var myname = document.getElementById("name");
-        myname.value = entername.toString();
-
-    </script> -->
+   
     <script>
-         var urlParams = new URLSearchParams(window.location.search);
-      var myVariable = urlParams.get('variable');
+    // var urlParams = new URLSearchParams(window.location.search);
+    //   var myVariable = urlParams.get('variable');
+
+    var myVariable = lb;
 
       if (myVariable) {
         var myname = document.getElementById("name");
-        myname.value = myVariable.toString();
+        myname.innerText = myVariable.toString();
       } else {
-        // alert('Variable not found in the URL');
+        alert('Variable not found in the URL');
       }
     </script>
 
@@ -93,7 +89,7 @@
     <div class="name-box">
 
         <strong class="text">
-            <p class="animated-text" id="name">sarjeet</p>
+            <p class="animated-text" id="name"></p>
             <p class="light">की तरफ से आप सभी को</p>
             <p class="light"> क्रिसमस की हार्दिक सुभकमनाए</p>
 
@@ -114,18 +110,34 @@
         </audio>
         <div class="btn-box">
 
-            <!-- <button class="custom-btn btn-7"><span>SHARE</span></button> -->
+            
             <button class="custom-btn btn-7" onclick="sendwish()"><span>SHARE ON WHATSAAP</span></button>
         </div>
+    </div>
+    <div class="form-box" id="form-box">
+        <input type="text" required id="input-name" placeholder="  enter your name"> 
+        <button class="custom-btn btn-7" onclick="createname()"><span>SHARE</span></button>
     </div>
 
 
     <script>
+        function createname() {
+           var namef = document.getElementById("input-name");
+           namev = namef.value;
+           var myname = document.getElementById("name");
+            myname.innerText = namev.toString();
+            var box = document.getElementById("form-box")
+            box.style.display ="none";
+            setTimeout(myFunction, 5000);
+
+        }
+        function myFunction() {
+            window.scrollTo(0, document.body.scrollHeight);
+            
+        }
+
       
-        var myName = document.getElementById("name");
-
-
-
+        
         var audio = document.getElementById("myAudio");
         window.addEventListener("load", function () {
             audio.play();
@@ -134,7 +146,7 @@
     <script>
 
         function sendwish(){
-        var sname = prompt("enter your name");
+        var sname = document.getElementById("name").value;
 
         
     //   var url = 'http://example.com/path?variable=' + encodeURIComponent(namevar)+' ne apko eih send ki h';

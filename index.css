@@ -238,7 +238,22 @@ background: linear-gradient(0deg, rgba(255,151,0,1) 0%, rgba(251,75,2,1) 100%);
   width: 100%;
 }
 
+.form-box{
+  width: 100%;
+  display: flex;
+  /* align-content: center; */
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  background-color: aqua;
+  padding: 5px;
+}
 
+.form-box input{
+  border: 1px solid;
+  border-radius: 40px;
+  margin-right: 5px;
+}
 
 
 
