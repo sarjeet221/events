@@ -134,13 +134,27 @@
     <script>
 
         function sendwish(){
-        var namevar = prompt("enter your name");
+        var sname = prompt("enter your name");
 
         
-      var url = 'http://example.com/path?variable=' + encodeURIComponent(namevar)+' ne apko eih send ki h';
-      var whatsappLink = 'https://wa.me/send?text=' + encodeURIComponent(url);
+    //   var url = 'http://example.com/path?variable=' + encodeURIComponent(namevar)+' ne apko eih send ki h';
+    //   var whatsappLink = 'https://wa.me/send?text=' + encodeURIComponent(url);
     //   window.location.href = url;
-      window.open(whatsappLink, '_blank');
+    //   window.open(whatsappLink, '_blank');
+
+
+
+        var shareString = "";
+        var whatsappHref;
+      shareString += "*"+sname+"*";
+
+      
+      shareString +=" has sent a special gift for you, click on the blue line%0A👉"
+      shareString +=(window.location.href.split("?")[0] + "?bl=" + sname).replace("#", "").replace(/ /g, "-");
+     
+
+      whatsappHref = "whatsapp://send?text=" + shareString;
+      window.location.href = whatsappHref;
 
         }
     </script>
