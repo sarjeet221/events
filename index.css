@@ -255,6 +255,13 @@ background: linear-gradient(0deg, rgba(255,151,0,1) 0%, rgba(251,75,2,1) 100%);
   margin-right: 5px;
 }
 
+.ad-box{
+  display: flex;
+  height: fit-content;
+  width: 100%;
+  align-items: center;
+}
+
 
 
 /* rsponsiv  */
@@ -292,6 +299,9 @@ background: linear-gradient(0deg, rgba(255,151,0,1) 0%, rgba(251,75,2,1) 100%);
 }
 .marqueeimg{
   width: 10vw;
+}
+.ad-box{
+  flex-direction: column;
 }
 }
 
