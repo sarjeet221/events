@@ -139,12 +139,12 @@ body{
 
   .quotes{
     width: 300px;
-    text-align: center;
-    margin-top: 20vh;
     font-size: 2vw;
     text-align: center;
-    margin-top: 15vh;
-    font-size: 2vw;
+    background-color: bisque;
+    margin: 5px auto;
+    padding: 20px;
+    border-radius: 20px 
   }
   .audio-box{
     /* width: 500px; */
