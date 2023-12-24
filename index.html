@@ -21,7 +21,7 @@
         var myname = document.getElementById("name");
         myname.value = myVariable.toString();
       } else {
-        alert('Variable not found in the URL');
+        // alert('Variable not found in the URL');
       }
     </script>
 
@@ -78,8 +78,8 @@
         <img class="marqueeimg" src="winman-removebg-preview.png" alt="">
         <img class="marqueeimg" src="tree-removebg-preview.png" alt="">
         <img class="marqueeimg" src="star-removebg-preview.png" alt="">
-        <img class="marqueeimg" src="santa-removebg-preview.png" alt=""> <img class="marqueeimg"
-            src="bugi-removebg-preview.png" alt="">
+        <img class="marqueeimg" src="santa-removebg-preview.png" alt="">
+        <img class="marqueeimg" src="bugi-removebg-preview.png" alt="">
         <img class="marqueeimg" src="cap-removebg-preview.png" alt="">
         <img class="marqueeimg" src="chitiyo-removebg-preview.png" alt="">
         <img class="marqueeimg" src="ice-removebg-preview.png" alt="">
@@ -137,8 +137,8 @@
         var namevar = prompt("enter your name");
 
         
-    //   var url = 'http://example.com/path?variable=' + encodeURIComponent(namevar);
-      var whatsappLink = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(namevar);
+      var url = 'http://example.com/path?variable=' + encodeURIComponent(namevar);
+      var whatsappLink = 'https://whatsapp.com/send?text=' + encodeURIComponent(url);
     //   window.location.href = url;
       window.open(whatsappLink, '_blank');
 
