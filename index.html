@@ -6,12 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Merry Christmas</title>
     <link rel="stylesheet" href="index.css">
-    <script>
+    <!-- <script>
         // let name = toString(prompt("Enter your name."));
         var entername = "ram";
         var myname = document.getElementById("name");
         myname.value = entername.toString();
 
+    </script> -->
+    <script>
+         var urlParams = new URLSearchParams(window.location.search);
+      var myVariable = urlParams.get('variable');
+
+      if (myVariable) {
+        var myname = document.getElementById("name");
+        myname.value = myVariable.toString();
+      } else {
+        alert('Variable not found in the URL');
+      }
     </script>
 
 
@@ -97,36 +108,41 @@
 
     </div>
     <div class="audio-box">
-        <audio id="myAudio" controls>
+        <audio id="myAudio" controls autoplay preload="auto">
             <source src="enchanted-chimes-177906.mp3" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
         <div class="btn-box">
 
             <!-- <button class="custom-btn btn-7"><span>SHARE</span></button> -->
-            <button class="custom-btn btn-7"><span>SHARE ON WHATSAAP</span></button>
+            <button class="custom-btn btn-7" onclick="sendwish()"><span>SHARE ON WHATSAAP</span></button>
         </div>
     </div>
 
 
     <script>
-        // Use prompt to get user input (already a string)
-        // var enterName = prompt("Enter your name.");
-        // var enterName = "ram"; // For testing without user input
-
-        // Get the element by ID after the HTML has been rendered
+      
         var myName = document.getElementById("name");
 
-        // Set the inner text of the element to the entered name
-        // myName.innerText = enterName;
 
 
         var audio = document.getElementById("myAudio");
-
-        // Play the audio when the page loads
         window.addEventListener("load", function () {
             audio.play();
         });
+    </script>
+    <script>
+
+        function sendwish(){
+        var namevar = prompt("enter your name");
+
+        
+    //   var url = 'http://example.com/path?variable=' + encodeURIComponent(namevar);
+      var whatsappLink = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(namevar);
+    //   window.location.href = url;
+      window.open(whatsappLink, '_blank');
+
+        }
     </script>
 
 
