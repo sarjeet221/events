@@ -7,19 +7,7 @@
     <title>Merry Christmas</title>
     <link rel="stylesheet" href="index.css">
    
-    <script>
-    var urlParams = new URLSearchParams(window.location.search);
-      var myVariable = urlParams.get('bl');
-
-    // var myVariable = bl;
-
-      if (myVariable) {
-        var myname = document.getElementById("name");
-        myname.innerText = myVariable.toString();
-      } else {
-        alert('Variable not found in the URL');
-      }
-    </script>
+   
 
 
 
@@ -119,7 +107,17 @@
         <button class="custom-btn btn-7" onclick="createname()"><span>SHARE</span></button>
     </div>
 
-
+    <script>
+        var urlParams = new URLSearchParams(window.location.search);
+          var myVariable = urlParams.get('bl');
+    
+          if (myVariable) {
+            var myname = document.getElementById("name");
+            myname.innerText = myVariable.toString();
+          } else {
+            alert('Variable not found in the URL');
+          }
+        </script>
     <script>
         function createname() {
            var namef = document.getElementById("input-name");
@@ -146,15 +144,7 @@
     <script>
 
         function sendwish(){
-        var sname = document.getElementById("name").value;
-
-        
-    //   var url = 'http://example.com/path?variable=' + encodeURIComponent(namevar)+' ne apko eih send ki h';
-    //   var whatsappLink = 'https://wa.me/send?text=' + encodeURIComponent(url);
-    //   window.location.href = url;
-    //   window.open(whatsappLink, '_blank');
-
-
+        var sname = document.getElementById("name").innerText;
 
         var shareString = "";
         var whatsappHref;
